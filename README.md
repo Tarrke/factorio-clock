@@ -15,7 +15,7 @@ The mod during the game.
 * first version of the mod
 * add a simple clock on the upper button flow of the screen
 
-## How to contribute
+## How to contribute
 
 If you want to contribute feel free to create a [pull request](https://github.com/Tarrke/factorio-clock/compare) (with new translations for example).
 
