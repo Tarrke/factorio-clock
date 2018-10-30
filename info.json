@@ -1,0 +1,11 @@
+{
+  "name": "GameClock",
+  "version": "0.0.1",
+  "title": "In Game Clock",
+  "author": "Tarrke",
+  "contact": "tarrke+factorio@gmail.com",
+  "homepage": "to be done soon",
+  "factorio_version": "0.16",
+  "dependencies": ["base >= 0.16"],
+  "description": "This mod adds a in game clock reflecting real time."
+}
