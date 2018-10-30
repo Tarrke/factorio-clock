@@ -1,6 +1,6 @@
 if not trk then trk = {} end
 
--- Wrapper so we can log or not 
+-- Wrapper so we can log or not
 function trk.log(message,callback)
     if game then
         for _, p in pairs(game.players) do

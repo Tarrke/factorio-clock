@@ -1,4 +1,4 @@
-require("gameclock")
+require("gclock/gameclock")
 
 
 -- when creating a new game, initialize data structure
@@ -7,7 +7,6 @@ function()
 	gclock.mod_init()
 end
 )
-
 
 -- When a player is joining, create the UI for them
 script.on_event(defines.events.on_player_created, function(event)
@@ -20,7 +19,13 @@ end)
 script.on_configuration_changed(gclock.mod_init)
 
 script.on_event(defines.events.on_tick, function(event)
+    -- We just get track of time every seconds
     if (event.tick % 60 == 0) then
         gclock.update_time()
     end
+end)
+
+-- Register clicks on the GUI
+script.on_event(defines.events.on_gui_click, function(event)
+    gclock.on_gui_click(event)
 end)
