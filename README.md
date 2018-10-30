@@ -4,7 +4,7 @@ This mod adds a simple clock into the game. The clock displays the time spent in
 
 ## Pictures
 
-[!Picture of the mod in game](img/clock.png)
+![Picture of the mod in game](img/clock.png)
 
 ## Changelog
 
