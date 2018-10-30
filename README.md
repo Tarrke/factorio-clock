@@ -10,7 +10,7 @@ The mod during the game.
 
 ## Changelog
 
-### Version 16.0.1
+### Version 16.0.1
 
 * first version of the mod
 * add a simple clock on the upper button flow of the screen
