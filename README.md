@@ -22,3 +22,7 @@ If you want to contribute feel free to create a [pull request](https://github.co
 Otherwise you can create an [issue](https://github.com/Tarrke/factorio-clock/issues/new) if you find a bug or have an idea for a feature.
 
 If you don't have a github account feel free to contact us via mail at tarrke+factorio (at) gmail.com.
+
+## Credits
+
+Thanks to [JonasJurczok](https://github.com/JonasJurczok) for inspiring me with his [TodoList](https://github.com/JonasJurczok/factorio-todo-list) mod and huge help correcting all my silly mistakes. Without him I may never have release this mod.
