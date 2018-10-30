@@ -6,6 +6,8 @@ This mod adds a simple clock into the game. The clock displays the time spent in
 
 ![Picture of the mod in game](img/clock.png)
 
+The mod during the game.
+
 ## Changelog
 
 ### Version 16.0.1
