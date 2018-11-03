@@ -5,6 +5,9 @@ require("trkcommon")
 
 function gclock.mod_init()
 	gclock.log("setting up mod data")
+	if not global.gclock then
+		global.gclock = {}
+	end
 	for _,player in pairs(game.players) do
 		gclock.create_button(player)
 	end
@@ -32,6 +35,15 @@ function gclock.create_button(player)
 		})
 		button.style.visible = true
 	end
+
+	if mod_gui.get_button_flow(player)["gclock_chrono"] == nil then
+		local chrono = mod_gui.get_button_flow(player).add({
+			type = "button",
+			name = "gclock_chrono",
+			capton = "Click to start"
+		})
+		chrono.style.visible = true
+	end
 end
 
 -- Update the clock for all players
@@ -45,6 +57,7 @@ end
 function gclock.refresh_button(player)
 	local button = mod_gui.get_button_flow(player)["gclock_button"]
 	if button then
+		-- TODO: use gclock.convert_ticks
 		ticks = game.tick
 		secs = ticks / 60
 		mins = ((secs - secs%60) / 60) % 60
@@ -52,9 +65,44 @@ function gclock.refresh_button(player)
 		s = string.format("%02d:%02d:%02d", hrs, mins, secs%60)
 		button.caption = s
 	end
+	local chrono = mod_gui.get_button_flow(player)["gclock_chrono"]
+	if chrono then
+		if global.gclock["chrono_start"] then
+			ticks = game.tick - global.gclock["chrono_start"]
+			hrs, mins, secs = gclock.convert_ticks(ticks)
+			s = string.format("%02d:%02d:%02d", hrs, mins, secs%60)
+			chrono.caption = s
+		else
+			gclock.log("No start tick...")
+			chrono.caption = "Click to Start"
+		end
+	end
+end
+
+function gclock.convert_ticks(ticks)
+	secs = ticks / 60
+	mins = ((secs - secs%60) / 60) % 60
+	hrs = secs / 3600
+	return hrs, mins, secs
 end
 
 -- callback function for gui clicks
 function gclock.on_gui_click(event)
-	gclock.log("Click on gui: " .. event.element.name)
+	gclock.log("Click on gui: " .. event.element.name .. " at tick " .. event.tick)
+	if( event.element.name == "gclock_chrono") then
+		-- Sets the chrono state. On left click fire up the chrono. On right click reset the timer
+		if event.button == defines.mouse_button_type.right then
+			global.gclock["chrono_start"] = nil
+			global.gclock["chrono_started"] = nil
+		else if event.button == defines.mouse_button_type.left then
+			if global.gclock["chono_start"] then
+				global.gclock["chrono_started"] = false
+				global.gclock["chrono_paused"] = event.tick
+			else
+				global.gclock["chrono_start"] = event.tick
+				global.gclock["chrono_started"] = true
+				gclock.log("Sets chrono start tick at " .. global.gclock["chrono_start"])
+			end
+		end
+	end
 end

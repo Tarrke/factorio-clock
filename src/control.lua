@@ -29,3 +29,12 @@ end)
 script.on_event(defines.events.on_gui_click, function(event)
     gclock.on_gui_click(event)
 end)
+
+-- Get the tick when the player join a session
+script.on_event(defines.events.on_player_joined_game, function(event)
+    gclock.log("Player joined")
+end)
+
+script.on_event(defines.events.on_player_left_game, function(event)
+    gclock.log("Player left")
+end)
