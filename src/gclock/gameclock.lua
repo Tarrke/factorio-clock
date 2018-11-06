@@ -7,6 +7,7 @@ function gclock.mod_init()
 	gclock.log("setting up mod data")
 	if not global.gclock then
 		global.gclock = {}
+		gclock.reset_chrono()
 	end
 	for _,player in pairs(game.players) do
 		gclock.create_button(player)
@@ -68,7 +69,11 @@ function gclock.refresh_button(player)
 	local chrono = mod_gui.get_button_flow(player)["gclock_chrono"]
 	if chrono then
 		if global.gclock["chrono_start"] then
-			ticks = game.tick - global.gclock["chrono_start"]
+			if global.gclock["chrono_started"] then
+				ticks = game.tick - global.gclock["chrono_start"] + global.gclock["chrono_elapsed"]
+			else
+				ticks = global.gclock["chrono_elapsed"]
+			end
 			hrs, mins, secs = gclock.convert_ticks(ticks)
 			s = string.format("%02d:%02d:%02d", hrs, mins, secs%60)
 			chrono.caption = s
@@ -86,19 +91,29 @@ function gclock.convert_ticks(ticks)
 	return hrs, mins, secs
 end
 
+-- Reset the Chrono
+function gclock.reset_chrono()
+	global.gclock["chrono_start"] = nil
+	global.gclock["chrono_started"] = nil
+	global.gclock["chrono_elapsed"] = 0
+end
+
 -- callback function for gui clicks
 function gclock.on_gui_click(event)
 	gclock.log("Click on gui: " .. event.element.name .. " at tick " .. event.tick)
 	if( event.element.name == "gclock_chrono") then
 		-- Sets the chrono state. On left click fire up the chrono. On right click reset the timer
 		if event.button == defines.mouse_button_type.right then
-			global.gclock["chrono_start"] = nil
-			global.gclock["chrono_started"] = nil
-		else if event.button == defines.mouse_button_type.left then
-			if global.gclock["chono_start"] then
+			gclock.reset_chrono()
+		elseif event.button == defines.mouse_button_type.left then
+			gclock.log("left click")
+			if global.gclock["chrono_started"] then
+				-- Stop the clock
+				gclock.log("Should stop the chrono")
 				global.gclock["chrono_started"] = false
-				global.gclock["chrono_paused"] = event.tick
+				global.gclock["chrono_elapsed"] = global.gclock["chrono_elapsed"] + event.tick - global.gclock["chrono_start"]
 			else
+				gclock.log("Should start the chrono")
 				global.gclock["chrono_start"] = event.tick
 				global.gclock["chrono_started"] = true
 				gclock.log("Sets chrono start tick at " .. global.gclock["chrono_start"])
