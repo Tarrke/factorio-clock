@@ -15,6 +15,21 @@ The mod during the game.
 * first version of the mod
 * add a simple clock on the upper button flow of the screen
 
+## Roadmap
+
+### Version 16.0.2
+
+* add chronometer button
+* The Chronometer can be disabled with an option
+
+### Future and Ideas
+
+* add a timer button
+* When timer is below 5 minutes color in orange
+* When timer is below 1 minute color in red
+* The timer can be disabled with an option
+* Middle click on the main button enables/disables timer/chronometer
+
 ## How to contribute
 
 If you want to contribute feel free to create a [pull request](https://github.com/Tarrke/factorio-clock/compare) (with new translations for example).
