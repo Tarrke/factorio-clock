@@ -42,7 +42,7 @@ function gclock.create_button(player)
 		local chrono = mod_gui.get_button_flow(player).add({
 			type = "button",
 			name = "gclock_chrono",
-			capton = "Click to start",
+			caption = { gclock.click_to_start },
 			style = "gclock_button_green"
 		})
 		chrono.style.visible = true
@@ -80,8 +80,7 @@ function gclock.refresh_button(player)
 			s = string.format("%02d:%02d:%02d", hrs, mins, secs%60)
 			chrono.caption = s
 		else
-			gclock.log("No start tick...")
-			chrono.caption = "Click to Start"
+			chrono.caption = { gclock.click_to_start }
 		end
 	end
 end
