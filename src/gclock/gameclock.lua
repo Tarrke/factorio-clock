@@ -43,7 +43,7 @@ function gclock.create_button(player)
 			type = "button",
 			name = "gclock_chrono",
 			caption = { gclock.click_to_start },
-			style = "gclock_button_green"
+			style = "gclock_button_default"
 		})
 		chrono.style.visible = true
 	end
