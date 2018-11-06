@@ -32,7 +32,8 @@ function gclock.create_button(player)
 		local button = mod_gui.get_button_flow(player).add({
 			type = "button",
 			name = "gclock_button",
-			caption = "Game Clock"
+			caption = "Game Clock",
+			style = "gclock_button_default"
 		})
 		button.style.visible = true
 	end
@@ -41,7 +42,8 @@ function gclock.create_button(player)
 		local chrono = mod_gui.get_button_flow(player).add({
 			type = "button",
 			name = "gclock_chrono",
-			capton = "Click to start"
+			capton = "Click to start",
+			style = "gclock_button_green"
 		})
 		chrono.style.visible = true
 	end
