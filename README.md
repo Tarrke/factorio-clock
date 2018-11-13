@@ -20,7 +20,7 @@ The mod during the game.
 ### Version 16.0.2
 
 * add chronometer button
-* The Chronometer can be disabled with an option
+* The Chronometer can be shown/hidden with a hot key
 
 ### Future and Ideas
 
