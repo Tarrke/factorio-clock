@@ -2,13 +2,24 @@
 
 This mod adds a simple clock into the game. The clock displays the time spent in the current game.
 
+There is also an in game Chronometer that can be start (left click), stop (left-click) and reset (right click).
+
 ## Pictures
 
 ![Picture of the mod in game](img/clock.png)
 
 The mod during the game.
 
+![Picture of the mod in game with chrono](img/clock_chrono.png)
+
+The mod with active Chronometer.
+
 ## Changelog
+
+### Version 16.1.0
+
+* add the chronometer feature.
+* add the Shift+C hotkey to toggle the chronometer display.
 
 ### Version 16.0.1
 
@@ -16,11 +27,6 @@ The mod during the game.
 * add a simple clock on the upper button flow of the screen
 
 ## Roadmap
-
-### Version 16.0.2
-
-* add chronometer button
-* The Chronometer can be shown/hidden with a hot key
 
 ### Future and Ideas
 
