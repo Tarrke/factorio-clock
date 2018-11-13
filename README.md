@@ -28,7 +28,6 @@ The mod during the game.
 * When timer is below X% total time color in orange
 * When timer is below Y% total time color in red
 * The timer can be disabled with an option
-* Middle click on the main button enables/disables timer/chronometer
 
 ## How to contribute
 
