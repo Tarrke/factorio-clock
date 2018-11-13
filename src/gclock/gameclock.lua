@@ -10,7 +10,8 @@ function gclock.mod_init()
 		gclock.reset_chrono()
 	end
 	for _,player in pairs(game.players) do
-		gclock.create_button(player)
+		gclock.create_main_button(player)
+		gclock.create_chrono_button(player)
 	end
 end
 
@@ -25,7 +26,7 @@ function gclock.log(message)
 end
 
 -- Creating Button for display
-function gclock.create_button(player)
+function gclock.create_main_button(player)
 	gclock.log("Creating UI button for player " .. player.name)
 
 	if mod_gui.get_button_flow(player)["gclock_button"] == nil then
@@ -37,7 +38,9 @@ function gclock.create_button(player)
 		})
 		button.style.visible = true
 	end
+end
 
+function gclock.create_chrono_button(player)
 	if mod_gui.get_button_flow(player)["gclock_chrono"] == nil then
 		local chrono = mod_gui.get_button_flow(player).add({
 			type = "button",
@@ -45,8 +48,17 @@ function gclock.create_button(player)
 			caption = { "gclock.clicktostart" },
 			style = "gclock_button_default"
 		})
-		chrono.style.visible = true
+		chrono.style.visible = false
 	end
+end
+
+function gclock.toggle_chrono_button(player)
+	local chrono = mod_gui.get_button_flow(player)["gclock_chrono"]
+	if chrono == nil then
+		gclock.create_chrono_button(player)
+		chrono = mod_gui.get_button_flow(player)["gclock_chrono"]
+	end
+	chrono.style.visible = not chrono.style.visible
 end
 
 -- Update the clock for all players
