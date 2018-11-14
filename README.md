@@ -16,6 +16,10 @@ The mod with active Chronometer.
 
 ## Changelog
 
+## Version 16.1.1
+
+* Bug fix at new game start.
+
 ### Version 16.1.0
 
 * add the chronometer feature.
