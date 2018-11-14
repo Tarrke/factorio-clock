@@ -10,7 +10,8 @@ There is also an in game Chronometer that can be start (left click), stop (left-
 
 The mod during the game.
 
-![Picture of the mod in game with chrono](img/clock_chrono.png)
+![Picture of the mod in game with chrono](img/chrono1.png)
+![Picture of the mod in game with chrono](img/chrono2.png)
 
 The mod with active Chronometer.
 
