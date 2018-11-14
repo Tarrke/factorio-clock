@@ -72,7 +72,7 @@ end
 function gclock.refresh_button(player)
 	local button = mod_gui.get_button_flow(player)["gclock_button"]
 	if button then
-		hrs, mins, secs = gclock.convert_ticks(ticks)
+		hrs, mins, secs = gclock.convert_ticks(game.tick)
 		s = string.format("%02d:%02d:%02d", hrs, mins, secs%60)
 		button.caption = s
 	end
@@ -94,6 +94,9 @@ function gclock.refresh_button(player)
 end
 
 function gclock.convert_ticks(ticks)
+	if not ticks then
+		ticks = 0
+	end
 	secs = ticks / 60
 	mins = ((secs - secs%60) / 60) % 60
 	hrs = secs / 3600
