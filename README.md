@@ -50,4 +50,4 @@ If you don't have a github account feel free to contact us via mail at tarrke+fa
 
 ## Credits
 
-Thanks to [JonasJurczok](https://github.com/JonasJurczok) for inspiring me with his [TodoList](https://github.com/JonasJurczok/factorio-todo-list) mod and huge help correcting all my silly mistakes. Without him I may never have release this mod.
+Thanks to [JonasJurczok](https://github.com/JonasJurczok) for inspiring me with his [TodoList](https://github.com/JonasJurczok/factorio-todo-list) mod and huge help correcting all my silly mistakes. Without him I may never have released this mod.
