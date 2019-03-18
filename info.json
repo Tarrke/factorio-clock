@@ -1,11 +1,11 @@
 {
   "name": "GameClock",
-  "version": "16.1.1",
+  "version": "17.0.1",
   "title": "Game Clock",
   "author": "Tarrke",
   "contact": "tarrke+factorio@gmail.com",
   "homepage": "https://github.com/Tarrke/factorio-clock/",
-  "factorio_version": "0.16",
-  "dependencies": ["base >= 0.16"],
+  "factorio_version": "0.17",
+  "dependencies": ["base >= 0.17"],
   "description": "This mod adds an in game clock reflecting real time. The time displayed is the same as the time in a save game."
 }
