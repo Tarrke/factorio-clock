@@ -7,7 +7,7 @@ data:extend({
 	{
 	  type = "custom-input",
 	  name = "toggle-chrono-key",
-	  key_sequence = "SHIFT + C",
+	  key_sequence = "ALT + C",
 	  consuming = "script-only"
 	}
 })

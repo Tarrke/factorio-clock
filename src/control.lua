@@ -13,7 +13,7 @@ script.on_event(defines.events.on_player_created, function(event)
 	gclock.log("player created")
     local player = game.players[event.player_index]
     gclock.create_main_button(player)
-    gclock.create_chrono_button(player)
+    --gclock.create_chrono_button(player)
 end)
 
 -- if the version of the mod or any other version changed

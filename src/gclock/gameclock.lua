@@ -36,7 +36,7 @@ function gclock.create_main_button(player)
 			caption = "Game Clock",
 			style = "gclock_button_default"
 		})
-		button.style.visible = true
+		button.visible = true
 	end
 end
 
@@ -48,7 +48,7 @@ function gclock.create_chrono_button(player)
 			caption = { "gclock.clicktostart" },
 			style = "gclock_button_default"
 		})
-		chrono.style.visible = false
+		chrono.visible = false
 	end
 end
 
@@ -58,7 +58,7 @@ function gclock.toggle_chrono_button(player)
 		gclock.create_chrono_button(player)
 		chrono = mod_gui.get_button_flow(player)["gclock_chrono"]
 	end
-	chrono.style.visible = not chrono.style.visible
+	chrono.visible = not chrono.visible
 end
 
 -- Update the clock for all players
